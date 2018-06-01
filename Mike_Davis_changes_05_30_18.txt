@@ -1,0 +1,10 @@
+-Change Summary
+
+*Removed the 'Flight Number' text and replaced it with 'IGETAWAY'
+* Added Implemented the serializable interface to save user data object to text file
+* Added serializeUser() and deserialize methods to the User class
+* Implemented duplicate username validation
+* Added username and password validation to LoginController
+* Added a incorrect username and password error label
+* Added variables for Javafx controls and logic
+* Added a logout feature
