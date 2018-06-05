@@ -30,11 +30,15 @@ public class MainUIController {
     @FXML
     ListView<String> fxFlightListView;
 
-    private String[] searchList = new String[]{"Flight No: 002 - Hawaii: 05/18/2018", 
-        "Flight No.: 131 - Texas: 06/18/2018", "Flight No.: 453 - Chicago: 07/23/2018",
-        "Flight No.: 239 - Boston: 08/19/2018", "Flight No.: 222 - San Diego: 09/15,2018", 
-        "Flight No.: 089 - Washington: 10/02/2018", "Flight No.: 623 - Miami: 11/30/2018",
-        "Flight No.: 923 - New York: 12/18/2018"};
+    private String[] searchList = new String[]{"HW001 - Hawaii: 06/18/2018", "HW002 - Hawaii: 06/19/2018",
+            "HW003 - Hawaii: 06/20/2018", "HW004 - Hawaii: 06/21/2018", "TX001 - Texas: 06/18/2018", "TX002 - Texas: 06/19/2018",
+            "TX003 - Texas: 06/20/2018", "TX004 - Texas: 06/21/2018", "CH001 - Chicago: 06/18/2018:", "CH002 - Chicago: 06/19/2018",
+            "CH003 - Chicago: 06/20/2018", "CH004 - Chicago: 06/21/2018", "BO001 - Boston: 06/18/2018", "BO002 - Boston: 06/19/2018",
+            "BO003 - Boston: 06/20/2018", "BO004 - Boston: 06/21/2018", "SD001 - San Diego: 06/18/2018", "SD002 - San Diego: 06/19/2018",
+            "SD003 - San Diego: 06/20/2018", "SD004 - San Diego: 06/21/2018", "WA001 - Washington: 06/18/2018", "WA002 - Washington: 06/19/2018",
+            "WA003 - Washington: 06/20/2018", "WA004 - Washington: 06/21/2018", "MI001 - Miami: 06/18/2018:", "MI002 - Miami: 06/19/2018",
+            "MI003 - Miami: 06/20/2018", "MI004 - Miami: 06/21/2018", "NY001 - New York: 06/18/2018", "NY002 - New York: 06/19/2018",
+            "NY003 - New York: 06/20/2018", "NY004 - New York: 06/21/2018"};
 
     private int matchCount;
 
@@ -50,175 +54,151 @@ public class MainUIController {
             return -1;
         }// End if
 
-        if (searchString.matches(".*haw.*")) {
+        if (searchString.matches(".*awaii.*")) {
             fxTextArea.appendText((searchList[0] + "\n"));
 
             matchCount++;
         }// End if
-        if (searchString.matches(".*05.*")) {
-            fxTextArea.appendText(searchList[0] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*05 18.*")) {
-            fxTextArea.appendText(searchList[0] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*awaii.*")) {
+            fxTextArea.appendText((searchList[1] + "\n"));
 
-        if (searchString.matches(".*may.*")) {
-            fxTextArea.appendText(searchList[0] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[0] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*awaii.*")) {
+            fxTextArea.appendText((searchList[2] + "\n"));
 
-        if (searchString.matches(".*tex.*")) {
-            fxTextArea.appendText(searchList[1] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*06.*")) {
-            fxTextArea.appendText(searchList[1] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*06 18.*")) {
-            fxTextArea.appendText(searchList[1] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*jun.*")) {
-            fxTextArea.appendText(searchList[1] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[1] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*awaii.*")) {
+            fxTextArea.appendText((searchList[3] + "\n"));
 
-        if (searchString.matches(".*chi.*")) {
-            fxTextArea.appendText(searchList[2] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*07.*")) {
-            fxTextArea.appendText(searchList[2] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*07 23.*")) {
-            fxTextArea.appendText(searchList[2] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*jul.*")) {
-            fxTextArea.appendText(searchList[2] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[2] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*exas.*")) {
+            fxTextArea.appendText((searchList[4] + "\n"));
 
-        if (searchString.matches(".*bos.*")) {
-            fxTextArea.appendText(searchList[3] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*08.*")) {
-            fxTextArea.appendText(searchList[3] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*09 19.*")) {
-            fxTextArea.appendText(searchList[3] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*aug.*")) {
-            fxTextArea.appendText(searchList[3] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[3] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*exas.*")) {
+            fxTextArea.appendText((searchList[5] + "\n"));
 
-        if (searchString.matches(".*diego.*")) {
-            fxTextArea.appendText(searchList[4] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*09.*")) {
-            fxTextArea.appendText(searchList[4] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*09 15.*")) {
-            fxTextArea.appendText(searchList[4] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*sep.*")) {
-            fxTextArea.appendText(searchList[4] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[4] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*exas.*")) {
+            fxTextArea.appendText((searchList[6] + "\n"));
 
-        if (searchString.matches(".*wash.*")) {
-            fxTextArea.appendText(searchList[5] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*10.*")) {
-            fxTextArea.appendText(searchList[5] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*10 02.*")) {
-            fxTextArea.appendText(searchList[5] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*oct.*")) {
-            fxTextArea.appendText(searchList[5] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[5] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*exas.*")) {
+            fxTextArea.appendText((searchList[7] + "\n"));
 
-        if (searchString.matches(".*mia.*")) {
-            fxTextArea.appendText(searchList[6] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*11.*")) {
-            fxTextArea.appendText(searchList[6] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*11 30.*")) {
-            fxTextArea.appendText(searchList[6] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*nov.*")) {
-            fxTextArea.appendText(searchList[6] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[6] + "\n");
-            matchCount++;
-        }// End if
+        if (searchString.matches(".*hicago.*")) {
+            fxTextArea.appendText((searchList[8] + "\n"));
 
-        if (searchString.matches(".*york.*")) {
-            fxTextArea.appendText(searchList[7] + "\n");
             matchCount++;
         }// End if
-        if (searchString.matches(".*12.*")) {
-            fxTextArea.appendText(searchList[7] + "\n");
+        if (searchString.matches(".*hicago.*")) {
+            fxTextArea.appendText((searchList[9] + "\n"));
+
             matchCount++;
         }// End if
-        if (searchString.matches(".*12 18.*")) {
-            fxTextArea.appendText(searchList[7] + "\n");
+        if (searchString.matches(".*hicago.*")) {
+            fxTextArea.appendText((searchList[10] + "\n"));
+
             matchCount++;
         }// End if
-        if (searchString.matches(".*dec.*")) {
-            fxTextArea.appendText(searchList[7] + "\n");
+        if (searchString.matches(".*hicago.*")) {
+            fxTextArea.appendText((searchList[11] + "\n"));
+
             matchCount++;
         }// End if
-        if (searchString.matches(".*2018.*")) {
-            fxTextArea.appendText(searchList[7] + "\n");
+        if (searchString.matches(".*oston.*")) {
+            fxTextArea.appendText((searchList[12] + "\n"));
+
             matchCount++;
         }// End if
+        if (searchString.matches(".*oston.*")) {
+            fxTextArea.appendText((searchList[13] + "\n"));
+
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*oston.*")) {
+            fxTextArea.appendText((searchList[14] + "\n"));
+
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*oston.*")) {
+            fxTextArea.appendText((searchList[15] + "\n"));
+
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            fxTextArea.appendText(searchList[16] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            fxTextArea.appendText(searchList[17] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            fxTextArea.appendText(searchList[18] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            fxTextArea.appendText(searchList[19] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ashington.*")) {
+            fxTextArea.appendText(searchList[20] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ashington.*")) {
+            fxTextArea.appendText(searchList[21] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ashington.*")) {
+            fxTextArea.appendText(searchList[22] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ashington.*")) {
+            fxTextArea.appendText(searchList[23] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            fxTextArea.appendText(searchList[24] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            fxTextArea.appendText(searchList[25] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            fxTextArea.appendText(searchList[26] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            fxTextArea.appendText(searchList[27] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            fxTextArea.appendText(searchList[28] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            fxTextArea.appendText(searchList[29] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            fxTextArea.appendText(searchList[30] + "\n");
+            matchCount++;
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            fxTextArea.appendText(searchList[31] + "\n");
+            matchCount++;
+        }// End if
+ 
 
         if (matchCount == 0) {
             fxTextArea.appendText(matchCount + " matches found");
