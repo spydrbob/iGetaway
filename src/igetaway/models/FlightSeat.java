@@ -47,12 +47,5 @@ public class FlightSeat {
         isBooked = false;
     }// End method
 
-    @Override
-    public String toString() {
-        return ID;
-    }// End method
-    
-    
-
 }// End class
 

@@ -1,7 +1,7 @@
 /**
  * RegistrationController.java
  * Author:
- * Last Revision: 6/04/2018
+ * Last Revision: 5/23/2018
  * This logic supports account registration functionality
  */
 
@@ -19,10 +19,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
-import java.io.File;
 
 
 public class RegistrationController {
+    private static User[] registeredUserNames = new User[500];
     // Variables
     @FXML
     private TextField fxFirstNameField, fxLastNameField, fxInitialField, fxEmailField, fxPhoneField, fxUserNameField,
@@ -70,7 +70,7 @@ public class RegistrationController {
         int rtn = validate(user);
 
         if (rtn == 0) {
-            Parent confirmationSceneParent = FXMLLoader.load(getClass().getResource("../views/registrationConfirmation.fxml"));
+            Parent confirmationSceneParent = FXMLLoader.load(getClass().getResource("../views/confirmation.fxml"));
             Scene confirmationScene = new Scene(confirmationSceneParent);
 
             //Stage Information
@@ -111,6 +111,7 @@ public class RegistrationController {
     private int validate(User user) {
         validationCounter = 0;
         String prospectiveUserName = user.getUserName();
+        System.out.println("prospective: " + prospectiveUserName);
 
         // validate first name
         if (user.getFirstName().equals("")) {
@@ -137,30 +138,39 @@ public class RegistrationController {
 
 
         // Check if username is taken
-        String testUserName = user.getUserName();
-        File tempFile = new File( "src/igetaway/models/" + testUserName + ".txt");
+        String tempUserName;
 
         if (user.getUserName().equals("")) {
             fxUserNameLabel.setText("Missing user name");
         }// End if
-        else if(tempFile.exists()) {
-            fxUserNameLabel.setText("Username is unvailable");
-        }// End else if
 
-        else if (isEmpty && !user.getUserName().equals("")) {
-            fxUserNameLabel.setText("");
-            validationCounter++; // Count is 3
-        }// End else if
 
+        for (int i = 0; i < registeredUserNames.length; i++) {
+
+            if(isEmpty && !user.getUserName().equals("")) {
+                fxUserNameLabel.setText("");
+                validationCounter++; // Count is 3
+                break;
+            }// End if
+            else if (!isEmpty) {
+                tempUserName = registeredUserNames[i].getUserName();
+                if (tempUserName != null && prospectiveUserName == tempUserName) {
+                    fxUserNameLabel.setText("User name unavailable");
+                    break;
+                }// End if
+            }// End else if
+        }// End for
 
         // Validate password
         if (user.getPassWord().equals("")) {
             fxPassWordLabel.setText("Missing password");
+
+
         }// End if
         else if (!user.getPassWord().equals("")) {
             fxPassWordLabel.setText("");
             validationCounter++; // Count is 4
-        }// End else if
+        }
 
 
         // Validate passwords match
@@ -177,9 +187,13 @@ public class RegistrationController {
             validationCounter++; // Count is 5
         }
 
-        if (validationCounter == 5) {
-            int value = User.serializeUser(user);
+        System.out.println(validationCounter);
 
+        int rtn = 0;
+        if (validationCounter == 5) {
+            rtn = logUserToArray(user);
+
+            int value = rtn;
             return value;
         }// End if
         else
@@ -187,5 +201,33 @@ public class RegistrationController {
 
     }// End method
 
-}// End class
+    // This method writes the registered user to a user file for data management
+    private int logUserToArray(User user) {
+        int i = 0;
+        while (registeredUserNames[i] != null) {
 
+            i++;
+
+        }// End while
+
+            // Create new user instance for array
+            registeredUserNames[i] = new User();
+            registeredUserNames[i].setUserName(user.getUserName());
+            String tempName;
+            for (int j = 0; j < 3; j++) {
+
+                System.out.println(registeredUserNames[j]);
+            }
+
+            registeredUserNames[i].setPassWord(user.getPassWord());
+            registeredUserNames[i].setLastName(user.getLastName());
+            registeredUserNames[i].setFirstName(user.getFirstName());
+            registeredUserNames[i].setMiddleInit(user.getMiddleInit());
+            registeredUserNames[i].setEmail(user.getEmail());
+            registeredUserNames[i].setPhone(user.getPhone());
+            isEmpty = false;
+
+        return 0;
+    }// End method
+
+}// End class

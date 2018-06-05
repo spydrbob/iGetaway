@@ -8,8 +8,6 @@
 package igetaway.controllers;
 
 import igetaway.models.FlightSeat;
-import java.util.ArrayList;
-import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -27,12 +25,9 @@ public class SeatController {
 
     // Variables
     private FlightSeat flightSeat;
-    private int seatCount = 0;
 
     @FXML
     private Label fxTotalPriceLabel;
-    @FXML
-    private Label fxErrorLabel;
     @FXML
     private TextArea fxBookingSummary;
     @FXML
@@ -50,15 +45,12 @@ public class SeatController {
             fxSeatA6, fxSeatB6, fxSeatC6, fxSeatD6, fxSeatE6, fxSeatF6,
             fxSeatA7, fxSeatB7, fxSeatC7, fxSeatD7, fxSeatE7, fxSeatF7,
             fxSeatA8, fxSeatB8, fxSeatC8, fxSeatD8, fxSeatE8, fxSeatF8;
-    
-    private ArrayList<FlightSeat> seatInventory = new ArrayList<>();
-    private Random randNum;
 
     // METHODS FOR ROW 1
     @FXML
     private void seatA1booked(ActionEvent event) {
         flightSeat = new FlightSeat();
-       
+        String seatNum;
         if (fxSeatA1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A1");
             totalPrice += seatPrice;
@@ -66,9 +58,7 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
 
         }// End if
 
@@ -80,10 +70,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -98,9 +86,7 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
 
         }// End if
 
@@ -112,10 +98,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -130,9 +114,9 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
+
         }// End if
 
 
@@ -143,10 +127,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -161,9 +143,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -174,10 +155,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -192,9 +171,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -205,10 +183,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -223,9 +199,7 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
 
         }// End if
 
@@ -237,10 +211,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
 
     }// End method
@@ -256,9 +228,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -269,10 +240,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -286,9 +255,9 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
+
         }// End if
 
 
@@ -299,10 +268,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -316,9 +283,9 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
+
         }// End if
 
 
@@ -329,10 +296,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -346,9 +311,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
 
         }// End if
 
@@ -360,10 +324,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -377,9 +339,9 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
+
         }// End if
 
 
@@ -390,10 +352,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -407,9 +367,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
 
         }// End if
 
@@ -421,10 +380,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -439,9 +396,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
 
         }// End if
 
@@ -453,10 +409,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -470,9 +424,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
 
         }// End if
 
@@ -484,10 +437,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -501,9 +452,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
 
         }// End if
 
@@ -515,10 +465,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -532,9 +480,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -545,10 +492,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -562,9 +507,7 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
         }// End if
 
 
@@ -575,10 +518,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -592,9 +533,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -605,10 +545,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -623,9 +561,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -636,10 +573,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -653,9 +588,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -666,10 +600,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -683,9 +615,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -696,10 +627,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -713,9 +642,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -726,10 +654,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -743,9 +669,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -756,10 +681,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -773,9 +696,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -786,10 +708,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -804,9 +724,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -817,10 +736,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -834,9 +751,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -847,10 +763,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -864,9 +778,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -877,10 +790,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -894,9 +805,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -907,10 +817,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -924,9 +832,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -937,10 +844,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -954,9 +859,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -967,10 +871,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -985,9 +887,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -998,10 +899,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1015,9 +914,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1028,10 +926,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1045,9 +941,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1058,10 +953,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1075,9 +968,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1088,10 +980,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1105,9 +995,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1118,10 +1007,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1135,9 +1022,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1148,10 +1034,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1166,9 +1050,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1179,10 +1062,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1196,9 +1077,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1209,10 +1089,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1226,9 +1104,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1239,10 +1116,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1256,9 +1131,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1269,10 +1143,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1286,9 +1158,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1299,10 +1170,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1316,9 +1185,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1329,10 +1197,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1347,9 +1213,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1360,10 +1225,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1377,9 +1240,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1390,10 +1252,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1407,9 +1267,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1420,10 +1279,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1437,10 +1294,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
-            seatCount--;
+
         }// End if
 
 
@@ -1451,10 +1306,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1468,9 +1321,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1481,10 +1333,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
@@ -1498,9 +1348,8 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.bookSeat();
-            seatInventory.add(flightSeat);
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
-            seatCount++;
+
         }// End if
 
 
@@ -1511,14 +1360,12 @@ public class SeatController {
             tempTotal = String.valueOf(totalPrice);
             fxTotalPriceLabel.setText(tempTotal);
             flightSeat.releaseSeat();
-            seatInventory.remove(flightSeat);
             fxBookingSummary.appendText("\nSeat " + flightSeat.getID() + " was released.\n\n");
             flightSeat = null;
-            seatCount--;
         }// End else if
     }// End method
 
-    // This method goes back to the main UI
+    // Method to retrun to main UI
     @FXML
     private void backToMainUIButtonClicked(ActionEvent event) throws  Exception {
         Parent mainUISceneParent = FXMLLoader.load(getClass().getResource("../views/mainUI.fxml"));
@@ -1529,55 +1376,4 @@ public class SeatController {
         window.setScene(mainUIScene);
         window.show();
     }// End method
-    
-    // This method handles confirmation for seat booking
-    @FXML
-    private int seatSubmitButtonClicked(ActionEvent event) throws  Exception {
-        if(seatCount < 1) {
-            fxErrorLabel.setText("You must select at least one seat to continue");
-            
-            return -1;
-        }// End if
-        else if(seatCount > 10) {
-            fxErrorLabel.setText("You have exceeded the 10 seat limit.  Please"
-                    + " decrease your seat number or call our customer service "
-                    + "line at 1-800-GETAWAY for further assistance");
-            
-            return -1;
-        }// End else if
-        randNum = new Random();
-        int bookingSeed1 = randNum.nextInt(1000);
-        String strBookingSeed1 = Integer.toString(bookingSeed1);
-        String bookingCode = "GWY";
-        int bookingSeed2 = randNum.nextInt(1000);
-        String strBookingSeed2 = Integer.toString(bookingSeed2);
-        
-        String bookingNum = strBookingSeed1 + bookingCode + strBookingSeed2;
-             
-        //DUMMY VALUES FOR TESTING
-        String flightNum = "101";
-        String departureLoc = "Houston, TX.";
-        String arrivalLoc = "Oahu, HI";
-        String date = "06/12/2018";
-        String strTotalPrice = Integer.toString(totalPrice);
-        
-        // FXML Loader that accesses the bookingConfirmation.fxml file
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(getClass().getResource("../views/bookingConfirmation.fxml"));
-        Parent bookingConfirmationSceneParent = loader.load();
-        Scene bookingConfirmationScene = new Scene(bookingConfirmationSceneParent);
-
-        // Access BookingConfirmationController and call initBookingData method
-        BookingConfirmationController bc_Controller = loader.getController();
-        bc_Controller.initBookingData(bookingNum, flightNum, date, departureLoc, 
-                arrivalLoc, seatInventory, strTotalPrice);
-        
-        // Stage Information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(bookingConfirmationScene);
-        window.show();
-        
-        return 0;
-    }// End method
- 
 }// End class

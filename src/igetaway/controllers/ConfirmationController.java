@@ -15,7 +15,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class RegistrationConfirmationController {
+public class ConfirmationController {
 
     @FXML
     private void OKButtonClicked(ActionEvent event) throws Exception {
