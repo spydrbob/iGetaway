@@ -1,14 +1,17 @@
 /**
  * User.java
  * Author:
- * Last Revision: 5/24/2018
+ * Last Revision: 6/4/2018
  * This logic serves as a user data object
  */
 
 package igetaway.models;
 
-public class User {
+import java.io.*;
+
+public class User implements Serializable {
     //Variables
+    private static final long serialVersionUID = 1234L;
     private String firstName;
     private String lastName;
     private String middleInit;
@@ -17,6 +20,7 @@ public class User {
     private String userName;
     private String passWord;
     private String confirmedPassWord;
+    private static final String filePath = "src/igetaway/models/";
 
     // Constructors
     public User(){
@@ -102,4 +106,36 @@ public class User {
 
         this.confirmedPassWord = confirmedPassWord;
     }// End method
+
+    public static int serializeUser(User user) {
+        try {
+            FileOutputStream fos = new FileOutputStream(filePath.trim() + user.getUserName() + ".txt");
+            ObjectOutputStream outputStream = new ObjectOutputStream(fos);
+            outputStream.writeObject(user);
+            outputStream.close();
+
+            return 0;
+        }// End try
+        catch (IOException ex) {
+            System.err.println(ex);
+            return -1;
+        }// End catch
+    }// End method
+
+    public static User deserialize(String username) {
+        User savedUser = null;
+
+        try {
+            FileInputStream fis = new FileInputStream(filePath.trim() + username + ".txt");
+            ObjectInputStream inputStream = new ObjectInputStream(fis);
+            savedUser = (User) inputStream.readObject();
+            inputStream.close();
+        }// End try
+        catch (IOException | ClassNotFoundException ex) {
+            System.err.println(ex);
+        }// End catch
+
+        return savedUser;
+    }// End method
+
 }// End class
