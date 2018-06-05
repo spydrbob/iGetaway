@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="650.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="igetaway.controllers.SeatController">
+   <children>
+      <ScrollPane prefHeight="528.0" prefWidth="650.0" AnchorPane.bottomAnchor="222.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="748.0" prefWidth="649.0">
+               <children>
+                  <ImageView fitHeight="801.0" fitWidth="650.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../resources/plane.png" />
+                     </image>
+                  </ImageView>
+                  <GridPane layoutX="241.0" layoutY="356.0" prefHeight="275.0" prefWidth="148.0">
+                    <columnConstraints>
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <Label text="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="4" GridPane.rowIndex="4">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="5" GridPane.rowIndex="5">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="6" GridPane.rowIndex="6">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="7" GridPane.rowIndex="7">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="8" GridPane.rowIndex="8">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="A" GridPane.columnIndex="1">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="B" GridPane.columnIndex="2">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="C" GridPane.columnIndex="3">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="D" GridPane.columnIndex="5">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="E" GridPane.columnIndex="6">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label text="F" GridPane.columnIndex="7">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <ToggleButton id="seatA1" fx:id="fxSeatA1" mnemonicParsing="false" onAction="#seatA1booked" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB1" fx:id="fxSeatB1" mnemonicParsing="false" onAction="#seatB1booked" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC1" fx:id="fxSeatC1" layoutX="43.0" layoutY="45.0" mnemonicParsing="false" onAction="#seatC1booked" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD1" fx:id="fxSeatD1" layoutX="59.0" layoutY="45.0" mnemonicParsing="false" onAction="#seatD1booked" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE1" fx:id="fxSeatE1" layoutX="92.0" layoutY="45.0" mnemonicParsing="false" onAction="#seatE1booked" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF1" fx:id="fxSeatF1" layoutX="109.0" layoutY="45.0" mnemonicParsing="false" onAction="#seatF1booked" GridPane.columnIndex="7" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA2" fx:id="fxSeatA2" layoutX="126.0" layoutY="45.0" mnemonicParsing="false" onAction="#seatA2booked" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB2" fx:id="fxSeatB2" layoutX="27.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatB2booked" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC2" fx:id="fxSeatC2" layoutX="43.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatC2booked" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD2" fx:id="fxSeatD2" layoutX="59.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatD2booked" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE2" fx:id="fxSeatE2" layoutX="92.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatE2booked" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF2" fx:id="fxSeatF2" layoutX="109.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatF2booked" GridPane.columnIndex="7" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA3" fx:id="fxSeatA3" layoutX="126.0" layoutY="76.0" mnemonicParsing="false" onAction="#seatA3booked" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB3" fx:id="fxSeatB3" layoutX="27.0" layoutY="107.0" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC3" fx:id="fxSeatC3" layoutX="43.0" layoutY="107.0" mnemonicParsing="false" onAction="#seatC3booked" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD3" fx:id="fxSeatD3" layoutX="59.0" layoutY="107.0" mnemonicParsing="false" onAction="#seatD3booked" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD3" fx:id="fxSeatE3" layoutX="92.0" layoutY="107.0" mnemonicParsing="false" onAction="#seatE3booked" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF3" fx:id="fxSeatF3" layoutX="109.0" layoutY="107.0" mnemonicParsing="false" onAction="#seatF3booked" GridPane.columnIndex="7" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA4" fx:id="fxSeatA4" layoutX="27.0" layoutY="107.0" mnemonicParsing="false" onAction="#seatA4booked" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB4" fx:id="fxSeatB4" layoutX="27.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatB4booked" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC4" fx:id="fxSeatC4" layoutX="43.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatC4booked" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD4" fx:id="fxSeatD4" layoutX="59.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatD4booked" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE4" fx:id="fxSeatE4" layoutX="92.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatE4booked" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF4" fx:id="fxSeatF4" layoutX="109.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatF4booked" GridPane.columnIndex="7" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA5" fx:id="fxSeatA5" layoutX="27.0" layoutY="138.0" mnemonicParsing="false" onAction="#seatA5booked" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB5" fx:id="fxSeatB5" layoutX="27.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatB5booked" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC5" fx:id="fxSeatC5" layoutX="43.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatC5booked" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD5" fx:id="fxSeatD5" layoutX="59.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatD5booked" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE5" fx:id="fxSeatE5" layoutX="92.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatE5booked" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF5" fx:id="fxSeatF5" layoutX="109.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatF5booked" GridPane.columnIndex="7" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA6" fx:id="fxSeatA6" layoutX="27.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatA6booked" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB6" fx:id="fxSeatB6" layoutX="43.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatB6booked" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC6" fx:id="fxSeatC6" layoutX="59.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatC6booked" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD6" fx:id="fxSeatD6" layoutX="92.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatD6booked" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE6" fx:id="fxSeatE6" layoutX="109.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatE6booked" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF6" fx:id="fxSeatF6" layoutX="126.0" layoutY="169.0" mnemonicParsing="false" onAction="#seatF6booked" GridPane.columnIndex="7" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA7" fx:id="fxSeatA7" layoutX="27.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatA7booked" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB7" fx:id="fxSeatB7" layoutX="43.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatB7booked" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC7" fx:id="fxSeatC7" layoutX="59.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatC7booked" GridPane.columnIndex="3" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD7" fx:id="fxSeatD7" layoutX="92.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatD7booked" GridPane.columnIndex="5" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE7" fx:id="fxSeatE7" layoutX="109.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatE7booked" GridPane.columnIndex="6" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF7" fx:id="fxSeatF7" layoutX="126.0" layoutY="199.0" mnemonicParsing="false" onAction="#seatF7booked" GridPane.columnIndex="7" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatA8" fx:id="fxSeatA8" layoutX="27.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatA8booked" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatB8" fx:id="fxSeatB8" layoutX="43.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatB8booked" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatC8" fx:id="fxSeatC8" layoutX="59.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatC8booked" GridPane.columnIndex="3" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatD8" fx:id="fxSeatD8" layoutX="92.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatD8booked" GridPane.columnIndex="5" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatE8" fx:id="fxSeatE8" layoutX="109.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatE8booked" GridPane.columnIndex="6" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                        <ToggleButton id="seatF8" fx:id="fxSeatF8" layoutX="126.0" layoutY="229.0" mnemonicParsing="false" onAction="#seatF8booked" GridPane.columnIndex="7" GridPane.rowIndex="8">
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </ToggleButton>
+                     </children>
+                  </GridPane>
+                  <Pane layoutX="256.0" layoutY="274.0" prefHeight="83.0" prefWidth="119.0">
+                     <children>
+                        <Label id="flightNumberLabel" layoutX="12.0" layoutY="18.0" prefHeight="18.0" prefWidth="95.0" text="Flight Number">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                        <Label id="flightNumberID" fx:id="fxFlightNumberID" layoutX="29.0" layoutY="42.0" prefHeight="18.0" prefWidth="62.0" text="(number)">
+                           <font>
+                              <Font name="Droid Sans" size="14.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </Pane>
+                  <TextArea id="bookingSummary" fx:id="fxBookingSummary" editable="false" layoutX="430.0" layoutY="50.0" prefHeight="166.0" prefWidth="200.0" wrapText="true" />
+                  <Label layoutX="430.0" layoutY="234.0" text="Total: ">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="495.0" layoutY="234.0" text="\$">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="fxTotalPriceLabel" layoutX="515.0" layoutY="234.0" prefHeight="35.0" prefWidth="94.0" text="0">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
+                  <Label alignment="CENTER" contentDisplay="TEXT_ONLY" layoutX="432.0" layoutY="14.0" prefHeight="35.0" prefWidth="200.0" text="Booking Summary" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <Button id="backToLoginButton" fx:id="fxBackToMainUIButton" layoutX="14.0" layoutY="27.0" mnemonicParsing="false" onAction="#backToMainUIButtonClicked" prefHeight="44.0" prefWidth="83.0" text="Back">
+                     <font>
+                        <Font name="System Bold" size="20.0" />
+                     </font>
+                  </Button>
+                  <Button id="seatSubmitButton" fx:id="fxSeatSubmitButton" layoutX="498.0" layoutY="286.0" mnemonicParsing="false" onAction="#seatSubmitButtonClicked" text="Submit">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label id="errorLabel" fx:id="fxErrorLabel" alignment="CENTER" layoutX="14.0" layoutY="112.0" prefHeight="104.0" prefWidth="215.0" textAlignment="CENTER" textFill="RED" wrapText="true">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>
