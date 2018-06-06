@@ -42,6 +42,8 @@ public class SeatController {
     @FXML
     Button fxBackToMainUIButton;
     @FXML
+    Label fxFlightInfoLabel;
+    @FXML
     ToggleButton fxSeatA1, fxSeatB1, fxSeatC1, fxSeatD1, fxSeatE1, fxSeatF1,
             fxSeatA2, fxSeatB2, fxSeatC2, fxSeatD2, fxSeatE2, fxSeatF2,
             fxSeatA3, fxSeatB3, fxSeatC3, fxSeatD3, fxSeatE3, fxSeatF3,
@@ -1545,20 +1547,7 @@ public class SeatController {
             
             return -1;
         }// End else if
-        randNum = new Random();
-        int bookingSeed1 = randNum.nextInt(1000);
-        String strBookingSeed1 = Integer.toString(bookingSeed1);
-        String bookingCode = "GWY";
-        int bookingSeed2 = randNum.nextInt(1000);
-        String strBookingSeed2 = Integer.toString(bookingSeed2);
-        
-        String bookingNum = strBookingSeed1 + bookingCode + strBookingSeed2;
-             
-        //DUMMY VALUES FOR TESTING
-        String flightNum = "101";
-        String departureLoc = "Houston, TX.";
-        String arrivalLoc = "Oahu, HI";
-        String date = "06/12/2018";
+        String bookingInfo = (String) fxFlightInfoLabel.getText();
         String strTotalPrice = Integer.toString(totalPrice);
         
         // FXML Loader that accesses the bookingConfirmation.fxml file
@@ -1569,8 +1558,7 @@ public class SeatController {
 
         // Access BookingConfirmationController and call initBookingData method
         BookingConfirmationController bc_Controller = loader.getController();
-        bc_Controller.initBookingData(bookingNum, flightNum, date, departureLoc, 
-                arrivalLoc, seatInventory, strTotalPrice);
+        bc_Controller.initBookingData(bookingInfo, seatInventory, strTotalPrice);
         
         // Stage Information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
@@ -1579,5 +1567,11 @@ public class SeatController {
         
         return 0;
     }// End method
+    
+     public void initFlightData (String bookingInfo) {
+     
+         fxFlightInfoLabel.setText(bookingInfo);
+     
+   }// End method
  
 }// End class

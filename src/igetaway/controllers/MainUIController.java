@@ -6,224 +6,252 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import java.io.IOException;
-import javafx.scene.control.Hyperlink;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
-import javafx.scene.control.ListView;
 
 public class MainUIController {
 
     @FXML
-    TextField fxMainSearchField;
+    private TextField fxMainSearchField;
     @FXML
-    TextArea fxTextArea;
+    private Label fxGreetingLabel;
     @FXML
-    Button fxFlightButton;
-    @FXML
-    Hyperlink fxLogoutLink;
-    @FXML
-    Label fxGreetingLabel;
-    @FXML
-    ListView<String> fxFlightListView;
+    private ComboBox fxFlightCombo;
+    ObservableList<String> flightOptions = FXCollections.observableArrayList();
 
-    private String[] searchList = new String[]{"HW001 - Hawaii: 06/18/2018", "HW002 - Hawaii: 06/19/2018",
-            "HW003 - Hawaii: 06/20/2018", "HW004 - Hawaii: 06/21/2018", "TX001 - Texas: 06/18/2018", "TX002 - Texas: 06/19/2018",
-            "TX003 - Texas: 06/20/2018", "TX004 - Texas: 06/21/2018", "CH001 - Chicago: 06/18/2018:", "CH002 - Chicago: 06/19/2018",
-            "CH003 - Chicago: 06/20/2018", "CH004 - Chicago: 06/21/2018", "BO001 - Boston: 06/18/2018", "BO002 - Boston: 06/19/2018",
-            "BO003 - Boston: 06/20/2018", "BO004 - Boston: 06/21/2018", "SD001 - San Diego: 06/18/2018", "SD002 - San Diego: 06/19/2018",
-            "SD003 - San Diego: 06/20/2018", "SD004 - San Diego: 06/21/2018", "WA001 - Washington: 06/18/2018", "WA002 - Washington: 06/19/2018",
-            "WA003 - Washington: 06/20/2018", "WA004 - Washington: 06/21/2018", "MI001 - Miami: 06/18/2018:", "MI002 - Miami: 06/19/2018",
-            "MI003 - Miami: 06/20/2018", "MI004 - Miami: 06/21/2018", "NY001 - New York: 06/18/2018", "NY002 - New York: 06/19/2018",
-            "NY003 - New York: 06/20/2018", "NY004 - New York: 06/21/2018"};
-
-    private int matchCount;
+    private String[] searchList = new String[]{
+            "Flight No: HW001   06/18/2018 Destination: Hawaii   Departing: Hong Kong",
+            "Flight No: HW002   06/19/2018 Destination: Hawaii   Departing: Seoul",
+            "Flight No: HW003   06/20/2018 Destination: Hawaii   Departing: San Francisco",
+            "Flight No: HW004   06/21/2018 Destination: Hawaii   Departing: Sydney",
+            "Flight No: TX001   06/18/2018 Destination: Dallas   Departing: Baltimore",
+            "Flight No: TX002   06/19/2018 Destination: Dallas   Departing: Pittsburgh",
+            "Flight No: TX003   06/20/2018 Destination: Dallas   Departing: Oakland",
+            "Flight No: TX004   06/21/2018 Destination: Dallas   Departing: Detroit",
+            "Flight No: CH001   06/18/2018 Destination: Chicago   Departing: Fresno",
+            "Flight No: CH002   06/19/2018 Destination: Chicago   Departing: Tampa",
+            "Flight No: CH003   06/20/2018 Destination: Chicago   Departing: Denver",
+            "Flight No: CH004   06/21/2018 Destination: Chicago   Departing: Sydney",
+            "Flight No: BO001   06/18/2018 Destination: Boston   Departing: Baltimore",
+            "Flight No: BO002   06/19/2018 Destination: Boston   Departing: Pittsburgh",
+            "Flight No: BO003   06/20/2018 Destination: Boston   Departing: Denver",
+            "Flight No: BO004   06/21/2018 Destination: Boston   Departing: Detroit",
+            "Flight No: SD001   06/18/2018 Destination: San Diego   Departing: Fresno",
+            "Flight No: SD002   06/19/2018 Destination: San Diego   Departing: Tampa",
+            "Flight No: SD003   06/20/2018 Destination: San Diego   Departing: Denver",
+            "Flight No: SD004   06/21/2018 Destination: San Diego   Departing: Sydney",
+            "Flight No: SE001   06/18/2018 Destination: Seattle   Departing: Baltimore",
+            "Flight No: SE002   06/19/2018 Destination: Seattle   Departing: Pittsburgh",
+            "Flight No: SE003   06/20/2018 Destination: Seattle   Departing: Denver",
+            "Flight No: SE004   06/21/2018 Destination: Seattle   Departing: Detroit",
+            "Flight No: MI001   06/18/2018 Destination: Miami   Departing: Fresno",
+            "Flight No: MI002   06/19/2018 Destination: Miami   Departing: Tampa",
+            "Flight No: MI003   06/20/2018 Destination: Miami   Departing: Denver",
+            "Flight No: MI004   06/21/2018 Destination: Miami   Departing: Sydney",
+            "Flight No: NY001   06/18/2018 Destination: New York   Departing: Baltimore",
+            "Flight No: NY002   06/19/2018 Destination: New York   Departing: Pittsburgh",
+            "Flight No: NY003   06/20/2018 Destination: New York   Departing: Denver",
+            "Flight No: NY004   06/21/2018 Destination: New York   Departing: Detroit"};
 
     @FXML
     private int searchButtonClicked(ActionEvent event) throws IOException {
-                
-        matchCount = 0;
+        flightOptions.clear();
+
         String searchString = fxMainSearchField.getText();
-        fxTextArea.clear();
 
         if (searchString.equals("")) {
-            fxTextArea.appendText("Missing your search criteria");
+            String noParam = "No search criteria entered";
+            flightOptions.add(noParam);
+            fxFlightCombo.setItems(flightOptions);
             return -1;
         }// End if
-
         if (searchString.matches(".*awaii.*")) {
-            fxTextArea.appendText((searchList[0] + "\n"));
+            flightOptions.add(searchList[0]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*awaii.*")) {
-            fxTextArea.appendText((searchList[1] + "\n"));
-
-            matchCount++;
         }// End if
         if (searchString.matches(".*awaii.*")) {
-            fxTextArea.appendText((searchList[2] + "\n"));
+            flightOptions.add(searchList[1]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*awaii.*")) {
-            fxTextArea.appendText((searchList[3] + "\n"));
+            flightOptions.add(searchList[2]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
+        }// End if
+        if (searchString.matches(".*awaii.*")) {
+            flightOptions.add(searchList[3]);
+            fxFlightCombo.setItems(flightOptions);
+
         }// End if
         if (searchString.matches(".*exas.*")) {
-            fxTextArea.appendText((searchList[4] + "\n"));
+            flightOptions.add(searchList[4]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*exas.*")) {
-            fxTextArea.appendText((searchList[5] + "\n"));
+            flightOptions.add(searchList[5]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*exas.*")) {
-            fxTextArea.appendText((searchList[6] + "\n"));
+            flightOptions.add(searchList[6]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*exas.*")) {
-            fxTextArea.appendText((searchList[7] + "\n"));
+            flightOptions.add(searchList[7]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*hicago.*")) {
-            fxTextArea.appendText((searchList[8] + "\n"));
+            flightOptions.add(searchList[8]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*hicago.*")) {
-            fxTextArea.appendText((searchList[9] + "\n"));
+            flightOptions.add(searchList[9]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*hicago.*")) {
-            fxTextArea.appendText((searchList[10] + "\n"));
+            flightOptions.add(searchList[10]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*hicago.*")) {
-            fxTextArea.appendText((searchList[11] + "\n"));
+            flightOptions.add(searchList[11]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*oston.*")) {
-            fxTextArea.appendText((searchList[12] + "\n"));
+            flightOptions.add(searchList[12]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*oston.*")) {
-            fxTextArea.appendText((searchList[13] + "\n"));
+            flightOptions.add(searchList[13]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*oston.*")) {
-            fxTextArea.appendText((searchList[14] + "\n"));
+            flightOptions.add(searchList[14]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*oston.*")) {
-            fxTextArea.appendText((searchList[15] + "\n"));
+            flightOptions.add(searchList[15]);
+            fxFlightCombo.setItems(flightOptions);
 
-            matchCount++;
         }// End if
         if (searchString.matches(".*iego.*")) {
-            fxTextArea.appendText(searchList[16] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iego.*")) {
-            fxTextArea.appendText(searchList[17] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iego.*")) {
-            fxTextArea.appendText(searchList[18] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iego.*")) {
-            fxTextArea.appendText(searchList[19] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ashington.*")) {
-            fxTextArea.appendText(searchList[20] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ashington.*")) {
-            fxTextArea.appendText(searchList[21] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ashington.*")) {
-            fxTextArea.appendText(searchList[22] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ashington.*")) {
-            fxTextArea.appendText(searchList[23] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iami.*")) {
-            fxTextArea.appendText(searchList[24] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iami.*")) {
-            fxTextArea.appendText(searchList[25] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iami.*")) {
-            fxTextArea.appendText(searchList[26] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*iami.*")) {
-            fxTextArea.appendText(searchList[27] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ork.*")) {
-            fxTextArea.appendText(searchList[28] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ork.*")) {
-            fxTextArea.appendText(searchList[29] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ork.*")) {
-            fxTextArea.appendText(searchList[30] + "\n");
-            matchCount++;
-        }// End if
-        if (searchString.matches(".*ork.*")) {
-            fxTextArea.appendText(searchList[31] + "\n");
-            matchCount++;
-        }// End if
- 
+            flightOptions.add(searchList[16]);
+            fxFlightCombo.setItems(flightOptions);
 
-        if (matchCount == 0) {
-            fxTextArea.appendText(matchCount + " matches found");
-            return -1;
         }// End if
-        else if (matchCount == 1) {
-            fxTextArea.appendText("\n" + matchCount + " match found");
-            return 0;
-        }// End else if
-        else {
-            fxTextArea.appendText("\n" + matchCount + " matches found");
-        }
+        if (searchString.matches(".*iego.*")) {
+            flightOptions.add(searchList[17]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            flightOptions.add(searchList[18]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iego.*")) {
+            flightOptions.add(searchList[19]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*eattle.*")) {
+            flightOptions.add(searchList[20]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*eattle.*")) {
+            flightOptions.add(searchList[21]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*eattle.*")) {
+            flightOptions.add(searchList[22]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*eattle.*")) {
+            flightOptions.add(searchList[23]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            flightOptions.add(searchList[24]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            flightOptions.add(searchList[25]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            flightOptions.add(searchList[26]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*iami.*")) {
+            flightOptions.add(searchList[27]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            flightOptions.add(searchList[28]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            flightOptions.add(searchList[29]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            flightOptions.add(searchList[30]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
+        if (searchString.matches(".*ork.*")) {
+            flightOptions.add(searchList[31]);
+            fxFlightCombo.setItems(flightOptions);
+
+        }// End if
 
         return 0;
     }// End method
 
     @FXML
     private void bookAFlightButtonClicked(ActionEvent event) throws Exception {
-        Parent bookingSceneParent = FXMLLoader.load(getClass().getResource("../views/seats.fxml"));
-        Scene bookingScene = new Scene(bookingSceneParent);
+        String flightInfo = (String) fxFlightCombo.getValue();
+        System.out.println(flightInfo);
+        
+        // FXML Loader that accesses the bookingConfirmation.fxml file
+        FXMLLoader loader = new FXMLLoader();
+        loader.setLocation(getClass().getResource("../views/seats.fxml"));
+        Parent seatsSceneParent = loader.load();
+        Scene seatsScene = new Scene(seatsSceneParent);
 
-        //Stage Information
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(bookingScene);
-
+        // Access BookingConfirmationController and call initBookingData method
+        SeatController s_Controller = loader.getController();
+        s_Controller.initFlightData(flightInfo);
+        
+        // Stage Information
+        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        window.setScene(seatsScene);
         window.show();
     }// End method
 
