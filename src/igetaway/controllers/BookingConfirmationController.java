@@ -1,7 +1,7 @@
 /**
  * BookingConfirmationController.java
- * Author:
- * Last Revision: 6/04/2018
+ * Author: Mike Davis
+ * Last Revision: 6/06/2018
  * This logic supports the booking confirmation UI message
  */
 package igetaway.controllers;
@@ -21,31 +21,48 @@ public class BookingConfirmationController {
     
     // Variables
     @FXML
-    private Label fxBookingInfoLabel, fxFlightNumLabel, fxFlightDateLabel, 
-            fxDepartureLocLabel, fxArrivalLocLabel, fxSeatsLabel, fxTotalPriceLabel;
-            
-    
-     // This method controls 
+    private Label fxBookingInfoLabel, fxSeatsLabel, fxTotalPriceLabel;
+    String userFirstName;      
+       
+     // This method controls the loading of the main UI after booking
     @FXML
     private void bookingConfirmButtonClicked(ActionEvent event) throws Exception {
-        Parent mainUISceneParent = FXMLLoader.load(getClass().getResource("../views/mainUI.fxml"));
-        Scene mainUIScene = new Scene(mainUISceneParent);
+        // FXML Loader that accesses the mainUI.fxml file
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("../views/mainUI.fxml"));
+                Parent mainUISceneParent = loader.load();
+                Scene mainUIScene = new Scene(mainUISceneParent);
 
-        //Stage Information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
-        window.setScene(mainUIScene);
-        window.show();
+                // Access MainUIController and call initUserData method
+                MainUIController m_Controller = loader.getController();
+                m_Controller.initUserData(userFirstName);
+
+                // Stage Information
+                Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+                window.setScene(mainUIScene);
+                window.centerOnScreen();
+                window.show();
     }// End method
     
+    // This method sets the booking information
      public void initBookingData (String bookingInfo, ArrayList<FlightSeat> seats, 
            String totalPrice) {
-     
+        
         fxBookingInfoLabel.setText(bookingInfo);
         fxTotalPriceLabel.setText("$" + totalPrice);
+        
+        // Check for null values and exclude
+        
+        // TODO
          
          // Converting the ArrayList to strings
          String seatList = seats.toString().concat(" ");
          fxSeatsLabel.setText(seatList);
+   }// End method
+   
+    // This method is used to persistent the user's first name
+   public void initUserData(String firstName) {
+       this.userFirstName =  firstName;
    }// End method
     
 }// End class

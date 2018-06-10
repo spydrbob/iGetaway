@@ -1,6 +1,6 @@
 /**
  * LoginController.java
- * Author:
+ * Author: Mike Davis
  * Last Revision: 6/04/2018
  * This logic supports user login functionality
  */
@@ -81,6 +81,7 @@ public class LoginController {
                 // Stage Information
                 Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
                 window.setScene(mainUIScene);
+                window.centerOnScreen();
                 window.show();
                 return 0;
             }// End inner if            
@@ -104,6 +105,7 @@ public class LoginController {
         //Stage Information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(registrationScene);
+        window.centerOnScreen();
         window.show();
     }// End method
 }// End class

@@ -1,6 +1,6 @@
 /**
  * RegistrationController.java
- * Author:
+ * Author: Mike Davis
  * Last Revision: 5/23/2018
  * This logic supports the registration confirmation UI message
  */
@@ -25,6 +25,7 @@ public class RegistrationConfirmationController {
         //Stage Information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(confirmationScene);
+        window.centerOnScreen();
         window.show();
     }// End method
 }// End class

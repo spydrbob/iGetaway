@@ -30,7 +30,7 @@
                         <DropShadow />
                     </effect>
                 </ImageView>
-                <TextField id="mainSearch" fx:id="fxMainSearchField" layoutX="239.0" layoutY="288.0" opacity="0.75" prefHeight="39.0" prefWidth="325.0" promptText="Where would you like to go?">
+                <TextField id="mainSearch" fx:id="fxMainSearchField" layoutX="239.0" layoutY="288.0" opacity="0.7" prefHeight="39.0" prefWidth="325.0">
                     <font>
                         <Font name="System Italic" size="18.0" />
                     </font>
@@ -79,17 +79,7 @@
                   </Label>
                </children>
             </HBox>
-            <ComboBox id="flightCombo" fx:id="fxFlightCombo" layoutX="240.0" layoutY="349.0" prefHeight="39.0" prefWidth="325.0" promptText="Select a Flight" />
-            <Label layoutX="14.0" layoutY="184.0" text="Step 1: Search for a flight" textFill="#2000ff">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="557.0" layoutY="184.0" text="Step 2:  Select a flight and click 'Book'" textFill="#2000ff">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
+            <ComboBox id="flightCombo" fx:id="fxFlightCombo" layoutX="240.0" layoutY="349.0" opacity="0.85" prefHeight="39.0" prefWidth="325.0" promptText="Select a Flight" />
             </children>
         </AnchorPane>
     </children>

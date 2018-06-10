@@ -1,6 +1,6 @@
 /**
  * FlightSeat.java
- * Author:
+ * Author: Mike Davis
  * Last Revision: 5/24/2018
  * This logic serves as a data object for flight seats
  */

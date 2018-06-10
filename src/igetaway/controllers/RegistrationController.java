@@ -1,6 +1,6 @@
 /**
  * RegistrationController.java
- * Author:
+ * Author: Chris Speidel
  * Last Revision: 6/04/2018
  * This logic supports account registration functionality
  */
@@ -76,6 +76,7 @@ public class RegistrationController {
             //Stage Information
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(confirmationScene);
+            window.centerOnScreen();
             window.show();
         }// End if
     }// End method
@@ -102,6 +103,7 @@ public class RegistrationController {
         //Stage Information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
+        window.centerOnScreen();
         window.show();
     }// End method
 

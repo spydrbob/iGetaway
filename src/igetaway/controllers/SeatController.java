@@ -1,15 +1,13 @@
 /**
  * SeatController.java
  * Author: Mike Davis
- * Last Revision: 5/23/2018
+ * Last Revision: 6/06/2018
  * This logic supports seat booking functionality
  */
-
 package igetaway.controllers;
 
 import igetaway.models.FlightSeat;
 import java.util.ArrayList;
-import java.util.Random;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -21,7 +19,6 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.ToggleButton;
 import javafx.stage.Stage;
-
 
 public class SeatController {
 
@@ -52,15 +49,15 @@ public class SeatController {
             fxSeatA6, fxSeatB6, fxSeatC6, fxSeatD6, fxSeatE6, fxSeatF6,
             fxSeatA7, fxSeatB7, fxSeatC7, fxSeatD7, fxSeatE7, fxSeatF7,
             fxSeatA8, fxSeatB8, fxSeatC8, fxSeatD8, fxSeatE8, fxSeatF8;
-    
+
     private ArrayList<FlightSeat> seatInventory = new ArrayList<>();
-    private Random randNum;
+    private String userFirstName;
 
     // METHODS FOR ROW 1
     @FXML
     private void seatA1booked(ActionEvent event) {
         flightSeat = new FlightSeat();
-       
+
         if (fxSeatA1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A1");
             totalPrice += seatPrice;
@@ -73,8 +70,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatA1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A1");
             totalPrice -= seatPrice;
@@ -105,8 +100,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatB1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B1");
             totalPrice -= seatPrice;
@@ -136,8 +129,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C1");
             totalPrice -= seatPrice;
@@ -167,8 +158,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D1");
             totalPrice -= seatPrice;
@@ -198,8 +187,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E1");
             totalPrice -= seatPrice;
@@ -230,8 +217,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatF1.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F1");
             totalPrice -= seatPrice;
@@ -262,8 +247,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A2");
             totalPrice -= seatPrice;
@@ -292,8 +275,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B2");
             totalPrice -= seatPrice;
@@ -322,8 +303,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C2");
             totalPrice -= seatPrice;
@@ -353,8 +332,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatD2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D2");
             totalPrice -= seatPrice;
@@ -383,8 +360,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E2");
             totalPrice -= seatPrice;
@@ -414,8 +389,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatF2.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F2");
             totalPrice -= seatPrice;
@@ -446,8 +419,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatA3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A3");
             totalPrice -= seatPrice;
@@ -477,8 +448,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatB3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B3");
             totalPrice -= seatPrice;
@@ -508,8 +477,6 @@ public class SeatController {
             seatCount++;
 
         }// End if
-
-
         else if (!fxSeatC3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C3");
             totalPrice -= seatPrice;
@@ -538,8 +505,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D3");
             totalPrice -= seatPrice;
@@ -568,8 +533,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E3");
             totalPrice -= seatPrice;
@@ -598,8 +561,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF3.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F3");
             totalPrice -= seatPrice;
@@ -629,8 +590,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A4");
             totalPrice -= seatPrice;
@@ -659,8 +618,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B4");
             totalPrice -= seatPrice;
@@ -689,8 +646,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C4");
             totalPrice -= seatPrice;
@@ -719,8 +674,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D4");
             totalPrice -= seatPrice;
@@ -749,8 +702,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E4");
             totalPrice -= seatPrice;
@@ -779,8 +730,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF4.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F4");
             totalPrice -= seatPrice;
@@ -810,8 +759,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A5");
             totalPrice -= seatPrice;
@@ -840,8 +787,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B5");
             totalPrice -= seatPrice;
@@ -870,8 +815,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C5");
             totalPrice -= seatPrice;
@@ -900,8 +843,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D5");
             totalPrice -= seatPrice;
@@ -930,8 +871,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E5");
             totalPrice -= seatPrice;
@@ -960,8 +899,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF5.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F5");
             totalPrice -= seatPrice;
@@ -991,8 +928,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A6");
             totalPrice -= seatPrice;
@@ -1021,8 +956,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B6");
             totalPrice -= seatPrice;
@@ -1051,8 +984,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C6");
             totalPrice -= seatPrice;
@@ -1081,8 +1012,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D6");
             totalPrice -= seatPrice;
@@ -1111,8 +1040,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E6");
             totalPrice -= seatPrice;
@@ -1141,8 +1068,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF6.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F6");
             totalPrice -= seatPrice;
@@ -1172,8 +1097,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A7");
             totalPrice -= seatPrice;
@@ -1202,8 +1125,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B7");
             totalPrice -= seatPrice;
@@ -1232,8 +1153,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C7");
             totalPrice -= seatPrice;
@@ -1262,8 +1181,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatD7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D7");
             totalPrice -= seatPrice;
@@ -1292,8 +1209,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E7");
             totalPrice -= seatPrice;
@@ -1322,8 +1237,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF7.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F7");
             totalPrice -= seatPrice;
@@ -1353,8 +1266,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatA8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("A8");
             totalPrice -= seatPrice;
@@ -1383,8 +1294,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatB8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("B8");
             totalPrice -= seatPrice;
@@ -1413,8 +1322,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatC8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("C8");
             totalPrice -= seatPrice;
@@ -1444,8 +1351,6 @@ public class SeatController {
             seatCount++;
             seatCount--;
         }// End if
-
-
         else if (!fxSeatD8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("D8");
             totalPrice -= seatPrice;
@@ -1474,8 +1379,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatE8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("E8");
             totalPrice -= seatPrice;
@@ -1504,8 +1407,6 @@ public class SeatController {
             fxBookingSummary.appendText("Seat: " + flightSeat.getID() + " booked:       $" + seatPrice + "\n");
             seatCount++;
         }// End if
-
-
         else if (!fxSeatF8.isSelected() && !flightSeat.isSeatBooked()) {
             flightSeat.setID("F8");
             totalPrice -= seatPrice;
@@ -1522,34 +1423,34 @@ public class SeatController {
 
     // This method goes back to the main UI
     @FXML
-    private void backToMainUIButtonClicked(ActionEvent event) throws  Exception {
+    private void backToMainUIButtonClicked(ActionEvent event) throws Exception {
         Parent mainUISceneParent = FXMLLoader.load(getClass().getResource("../views/mainUI.fxml"));
         Scene mainUIScene = new Scene(mainUISceneParent);
 
         //Stage Information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(mainUIScene);
         window.show();
     }// End method
-    
+
     // This method handles confirmation for seat booking
     @FXML
-    private int seatSubmitButtonClicked(ActionEvent event) throws  Exception {
-        if(seatCount < 1) {
+    private int seatSubmitButtonClicked(ActionEvent event) throws Exception {
+        if (seatCount < 1) {
             fxErrorLabel.setText("You must select at least one seat to continue");
-            
+
             return -1;
         }// End if
-        else if(seatCount > 10) {
+        else if (seatCount > 10) {
             fxErrorLabel.setText("You have exceeded the 10 seat limit.  Please"
                     + " decrease your seat number or call our customer service "
                     + "line at 1-800-GETAWAY for further assistance");
-            
+
             return -1;
         }// End else if
         String bookingInfo = (String) fxFlightInfoLabel.getText();
         String strTotalPrice = Integer.toString(totalPrice);
-        
+
         // FXML Loader that accesses the bookingConfirmation.fxml file
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(getClass().getResource("../views/bookingConfirmation.fxml"));
@@ -1559,19 +1460,26 @@ public class SeatController {
         // Access BookingConfirmationController and call initBookingData method
         BookingConfirmationController bc_Controller = loader.getController();
         bc_Controller.initBookingData(bookingInfo, seatInventory, strTotalPrice);
-        
+        bc_Controller.initUserData(userFirstName);
+
         // Stage Information
-        Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(bookingConfirmationScene);
+        window.centerOnScreen();
         window.show();
-        
+
         return 0;
     }// End method
-    
-     public void initFlightData (String bookingInfo) {
-     
-         fxFlightInfoLabel.setText(bookingInfo);
-     
-   }// End method
- 
+
+    public void initFlightData(String bookingInfo) {
+
+        fxFlightInfoLabel.setText(bookingInfo);
+
+    }// End method
+
+    // This method is used to persistent the user's first name
+    public void initUserData(String firstName) {
+        this.userFirstName = firstName;
+    }// End method
+
 }// End class

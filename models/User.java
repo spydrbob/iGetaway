@@ -20,7 +20,8 @@ public class User implements Serializable {
     private String userName;
     private String passWord;
     private String confirmedPassWord;
-    private static final String filePath = "src/igetaway/models/";
+    private static final String filePath = System.getProperty("user.dir") + 
+            "\\users\\";
 
     // Constructors
     public User(){

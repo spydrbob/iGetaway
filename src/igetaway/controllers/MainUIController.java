@@ -1,3 +1,9 @@
+/**
+ * MainUIController.java
+ * Author: Chris Speidel
+ * Last Revision: 6/06/2018
+ * This logic supports user login functionality
+ */
 package igetaway.controllers;
 
 import javafx.event.ActionEvent;
@@ -23,7 +29,7 @@ public class MainUIController {
     @FXML
     private ComboBox fxFlightCombo;
     ObservableList<String> flightOptions = FXCollections.observableArrayList();
-
+   
     private String[] searchList = new String[]{
             "Flight No: HW001   06/18/2018 Destination: Hawaii   Departing: Hong Kong",
             "Flight No: HW002   06/19/2018 Destination: Hawaii   Departing: Seoul",
@@ -237,7 +243,7 @@ public class MainUIController {
     @FXML
     private void bookAFlightButtonClicked(ActionEvent event) throws Exception {
         String flightInfo = (String) fxFlightCombo.getValue();
-        System.out.println(flightInfo);
+        String userFirstName = (String) fxGreetingLabel.getText();
         
         // FXML Loader that accesses the bookingConfirmation.fxml file
         FXMLLoader loader = new FXMLLoader();
@@ -248,10 +254,12 @@ public class MainUIController {
         // Access BookingConfirmationController and call initBookingData method
         SeatController s_Controller = loader.getController();
         s_Controller.initFlightData(flightInfo);
+        s_Controller.initUserData(userFirstName);
         
         // Stage Information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
         window.setScene(seatsScene);
+        window.centerOnScreen();
         window.show();
     }// End method
 
@@ -263,13 +271,12 @@ public class MainUIController {
         //Stage Information
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
+        window.centerOnScreen();
         window.show();
     }// End method
 
     public void initUserData(String firstName) {
-
         fxGreetingLabel.setText(firstName);
-
     }// End method
 }// End class
 
