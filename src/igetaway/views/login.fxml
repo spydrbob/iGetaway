@@ -74,7 +74,7 @@
                   </Hyperlink>
                   <Region prefHeight="100.0" prefWidth="16.0" />
                   <Region prefHeight="100.0" prefWidth="16.0" />
-                  <Button id="loginButton" fx:id="loginButton" mnemonicParsing="false" onAction="#loginClicked" text="LOGIN">
+                  <Button id="loginButton" fx:id="loginButton" mnemonicParsing="false" onAction="#loginClicked" text="Login">
                      <HBox.margin>
                         <Insets top="10.0" />
                      </HBox.margin>
