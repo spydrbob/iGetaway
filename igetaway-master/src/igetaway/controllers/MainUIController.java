@@ -251,10 +251,11 @@ public class MainUIController {
         Parent seatsSceneParent = loader.load();
         Scene seatsScene = new Scene(seatsSceneParent);
 
-        // Access BookingConfirmationController and call initBookingData method
+        // Access SeatController and call its methods
         SeatController s_Controller = loader.getController();
         s_Controller.initFlightData(flightInfo);
         s_Controller.initUserData(userFirstName);
+        s_Controller.resetTotal();
         
         // Stage Information
         Stage window = (Stage)((Node)event.getSource()).getScene().getWindow();
